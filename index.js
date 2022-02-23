@@ -24,22 +24,27 @@ const data = [
   },
 ];
 
-// Part 1
+// Part 1 - version 1
 
 function emailArray() {
+  let arr = [];
   data.forEach((element) => {
-    console.log(element.email);
+      arr.push(element.email);
   });
+  return arr;
 }
 console.log(emailArray());
 
-// Part 2
+// Part 2 - version 1
 
-function lastNameArray(lastname, Dion) {
-  data.forEach((element) => {
-    console.log(element.lastname);
+function lastNameArray(emailAddress) {
+  const fullList = emailArray();
+  let afterList = fullList.filter( (item) => {
+      return emailAddress != item;
   });
+  return afterList;
 }
-console.log(lastNameArray());
 
-// Part 3
+
+console.log(lastNameArray('shzanbaghi@experiencedmg.com'));
+
